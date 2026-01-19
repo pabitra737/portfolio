@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-text-light dark:text-text-inverted transition-colors duration-300;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-bg-light dark:bg-bg-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-secondary-light dark:bg-secondary rounded-lg;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-light;
+}
+
+/* Glass Effect Utility */
+@layer components {
+  .glass-nav {
+    @apply bg-white/10 dark:bg-black/20 backdrop-blur-lg border border-white/20 dark:border-white/10 shadow-lg;
+  }
+}
+
+/* Active Link Styling for Mobile */
+.active-nav-icon {
+  @apply text-primary dark:text-primary-light scale-110 !important;
+}
+
+.active-nav-icon span {
+  @apply font-bold;
+}
