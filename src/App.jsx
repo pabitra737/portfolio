@@ -15,6 +15,8 @@ function App() {
     <div className="min-h-screen relative text-text-main dark:text-text-inverted overflow-x-hidden">
       <div className="fixed inset-0 -z-10 pointer-events-auto">
         <FloatingLines
+          linesGradient={['#7c3aed', '#22d3ee', '#3b82f6']}
+          backgroundColor="#030014"
           enabledWaves={['top', 'middle', 'bottom']}
           lineCount={[5, 5, 5]}
           lineDistance={[7, 7, 7]}

@@ -55,6 +55,7 @@ uniform vec2 parallaxOffset;
 
 uniform vec3 lineGradient[8];
 uniform int lineGradientCount;
+uniform vec3 backgroundColor;
 
 const vec3 BLACK = vec3(0.0);
 const vec3 PINK  = vec3(233.0, 71.0, 245.0) / 255.0;
@@ -129,7 +130,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
   vec3 col = vec3(0.0);
 
-  vec3 b = lineGradientCount > 0 ? vec3(0.0) : background_color(baseUv);
+  vec3 b = lineGradientCount > 0 ? backgroundColor : background_color(baseUv);
 
   vec2 mouseUv = vec2(0.0);
   if (interactive) {
@@ -243,7 +244,8 @@ export default function FloatingLines({
   mouseDamping = 0.05,
   parallax = true,
   parallaxStrength = 0.2,
-  mixBlendMode = 'screen'
+  mixBlendMode = 'screen',
+  backgroundColor = '#000000'
 }) {
   const containerRef = useRef(null);
   const rendererRef = useRef(null);
@@ -295,7 +297,9 @@ export default function FloatingLines({
       parallaxStrength: { value: 0.2 },
       parallaxOffset: { value: new Vector2(0, 0) },
       lineGradient: { value: Array.from({ length: MAX_GRADIENT_STOPS }, () => new Vector3(1, 1, 1)) },
-      lineGradientCount: { value: 0 }
+      lineGradient: { value: Array.from({ length: MAX_GRADIENT_STOPS }, () => new Vector3(1, 1, 1)) },
+      lineGradientCount: { value: 0 },
+      backgroundColor: { value: new Vector3(0, 0, 0) }
     };
     uniformsRef.current = uniforms;
 
@@ -441,11 +445,16 @@ export default function FloatingLines({
       u.lineGradientCount.value = 0;
     }
 
+    if (backgroundColor) {
+      const bg = hexToVec3(backgroundColor);
+      u.backgroundColor.value.set(bg.x, bg.y, bg.z);
+    }
+
   }, [
     linesGradient, enabledWaves, lineCount, lineDistance,
     topWavePosition, middleWavePosition, bottomWavePosition,
     animationSpeed, interactive, bendRadius, bendStrength,
-    parallax, parallaxStrength, mouseDamping // mouseDamping is used in render loop but we can update ref if needed, simple approach here
+    parallax, parallaxStrength, mouseDamping, backgroundColor
   ]);
 
   return (
@@ -474,5 +483,6 @@ FloatingLines.propTypes = {
   mouseDamping: PropTypes.number,
   parallax: PropTypes.bool,
   parallaxStrength: PropTypes.number,
-  mixBlendMode: PropTypes.string
+  mixBlendMode: PropTypes.string,
+  backgroundColor: PropTypes.string
 };

@@ -29,7 +29,7 @@ const Contact = () => {
                 </div>
 
                 <div className="flex justify-center items-center">
-                    <form onSubmit={handleSubmit} className="flex flex-col w-full md:w-1/2 gap-6 bg-white dark:bg-gray-800 p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700">
+                    <form onSubmit={handleSubmit} className="flex flex-col w-full md:w-1/2 gap-6 bg-white dark:bg-slate-900 p-6 md:p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700">
 
                         <div className="flex flex-col gap-2">
                             <label className="text-sm font-semibold text-text-main dark:text-gray-300">Name</label>

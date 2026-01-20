@@ -8,31 +8,31 @@ export default {
     theme: {
         extend: {
             colors: {
-                // Matte Palette
+                // Neon/Premium Palette
                 primary: {
-                    light: "#3b82f6", // Matte Blue
-                    DEFAULT: "#2563eb",
-                    dark: "#1d4ed8",
+                    light: "#a78bfa", // Violet 400
+                    DEFAULT: "#7c3aed", // Violet 600 (Neon Violet)
+                    dark: "#5b21b6", // Violet 800
                 },
                 secondary: {
-                    light: "#64748b", // Slate 500
-                    DEFAULT: "#475569", // Slate 600
+                    light: "#22d3ee", // Cyan 400 (Neon Cyan)
+                    DEFAULT: "#06b6d4", // Cyan 500
                 },
                 // Backgrounds
                 bg: {
-                    light: "#f1f5f9", // Slate 100 (Matte Light)
-                    dark: "#1e293b",  // Slate 800 (Matte Dark)
+                    light: "#f8fafc", // Slate 50
+                    dark: "#030014",  // Deep Space Black
                     card: {
                         light: "#ffffff",
-                        dark: "#334155" // Slate 700
+                        dark: "#0f172a" // Slate 900
                     }
                 },
                 // Text
                 text: {
-                    light: "#0f172a", // Slate 900
+                    light: "#020617", // Slate 950
                     main: "#334155",  // Slate 700
-                    muted: "#64748b", // Slate 500
-                    inverted: "#f8fafc" // Slate 50
+                    muted: "#94a3b8", // Slate 400
+                    inverted: "#f1f5f9" // Slate 100
                 }
             },
             animation: {

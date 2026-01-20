@@ -16,7 +16,7 @@ const Projects = () => {
                     {projects.map((project) => (
                         <div
                             key={project.id}
-                            className="flex flex-col h-full bg-white dark:bg-gray-800 rounded-xl p-4 shadow-lg border border-gray-100 dark:border-gray-700"
+                            className="flex flex-col h-full bg-white dark:bg-slate-900 rounded-xl p-4 shadow-lg border border-gray-100 dark:border-gray-700"
                         >
                             {/* Project Image */}
                             <div className="w-full h-48 rounded-xl overflow-hidden mb-4 shadow-sm border border-gray-100 dark:border-gray-800 relative">
