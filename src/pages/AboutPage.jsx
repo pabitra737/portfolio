@@ -4,6 +4,9 @@ import { FaHtml5, FaCss3Alt, FaJs, FaJava, FaDatabase, FaGitAlt, FaGithub, FaToo
 import { SiBootstrap, SiJquery, SiSpringboot, SiPostman } from 'react-icons/si';
 import { Link } from 'react-router-dom';
 import profileImg from '../assets/profile-avatar.png';
+import rcmImg from '../assets/rcm.png';
+import fmImg from '../assets/fm.png';
+import nirmalyaImg from '../assets/nirmalya.png';
 import { VscVscode } from "react-icons/vsc";
 
 const AboutPage = () => {
@@ -39,15 +42,38 @@ const AboutPage = () => {
             institution: "Regional College of Management",
             location: "Bhubaneswar, Odisha, India",
             year: "2024–2026",
-            link: "https://rcm.ac.in/"
+            link: "https://rcm.ac.in/",
+            logo: rcmImg
         },
         {
             id: 2,
             degree: "B.Sc. in Zology",
-            institution: "B.N.I.H.S Kachuadi",
-            location: "Kachuadi, Balasore, Odisha",
+            institution: "F.M. University",
+            location: "Balasore, Odisha",
             year: "2021–2024",
-            link: "#"
+            link: "https://fmuniversity.in/",
+            logo: fmImg
+        }
+    ];
+
+    const workExperience = [
+        {
+            id: 1,
+            role: "Full Stack Development Intern",
+            company: "Nirmalya Labs",
+            location: "Bhubaneswar, Odisha",
+            date: "Jun 2025 - Sep 2025",
+            description: "Worked on a Healthcare ERP system by building responsive and interactive frontend components using HTML, CSS, and jQuery. Developed dynamic forms, dashboards, and data handling features to enhance user experience and support efficient healthcare operations.",
+            logo: nirmalyaImg
+        },
+        {
+            id: 2,
+            role: "Freelance Web Developer",
+            company: "Self Employed",
+            location: "Remote",
+            date: "Dec 2025 - Present",
+            description: "Developed dynamic and responsive websites for various clients using React and Tailwind CSS. Focused on creating user-friendly interfaces and optimizing performance.",
+            logo: profileImg
         }
     ];
 
@@ -137,8 +163,12 @@ const AboutPage = () => {
                                 className="flex flex-col md:flex-row items-center justify-between bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow gap-4"
                             >
                                 <div className="flex items-center gap-4 w-full md:w-auto">
-                                    <div className="p-3 bg-gray-100 dark:bg-gray-700 rounded-full text-primary dark:text-primary-light">
-                                        <FaGraduationCap size={24} />
+                                    <div className="w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-full flex items-center justify-center shrink-0 overflow-hidden text-primary dark:text-primary-light">
+                                        {edu.logo ? (
+                                            <img src={edu.logo} alt={edu.institution} className="w-full h-full object-cover" />
+                                        ) : (
+                                            <FaGraduationCap size={24} />
+                                        )}
                                     </div>
                                     <div className="flex flex-col">
                                         <h4 className="text-lg font-bold text-text-light dark:text-white">{edu.institution}</h4>
@@ -157,21 +187,51 @@ const AboutPage = () => {
                     </div>
                 </div>
 
-                {/* Work Experience Section */}
+                {/* Work Experience Section - Timeline Style */}
                 <div className="flex flex-col gap-8">
                     <h3 className="text-2xl md:text-3xl font-bold text-center text-text-light dark:text-white">Work Experience</h3>
 
-                    <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-md border-l-8 border-primary max-w-4xl mx-auto w-full">
-                        <div className="flex items-start gap-4">
-                            <div className="p-3 bg-primary/10 rounded-full text-primary mt-1">
-                                <FaBriefcase size={24} />
-                            </div>
-                            <div>
-                                <h4 className="text-xl font-bold text-text-light dark:text-white">Gaining Practical Experience</h4>
-                                <p className="text-text-muted dark:text-gray-400 mt-2 leading-relaxed">
-                                    I have been actively involved in building real-world projects, including e-commerce platforms and portfolio websites, applying agile methodologies. My hands-on experience comes from rigorous self-directed learning, academic projects, and internships where I collaborated with teams to deliver responsive and user-centric web solutions. I am eager to bring this practical knowledge to a professional development team.
-                                </p>
-                            </div>
+                    <div className="relative max-w-5xl mx-auto w-full px-4">
+                        <div className="flex flex-col">
+                            {workExperience.map((work, index) => (
+                                <div key={work.id} className={`relative flex flex-col md:flex-row items-center w-full ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} ${index !== workExperience.length - 1 ? 'pb-12' : ''}`}>
+
+                                    {/* Vertical Line Segment */}
+                                    <div className={`absolute left-8 md:left-1/2 transform -translate-x-1/2 w-1 bg-gray-200 dark:bg-gray-700 ${index === 0 ? 'top-8' : 'top-0'} bottom-0 -z-10`}></div>
+
+                                    {/* Timeline Dot & Logo */}
+                                    <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-16 h-16 bg-white dark:bg-gray-800 border-4 border-primary rounded-full shadow-lg z-10 overflow-hidden top-0">
+                                        <img src={work.logo} alt={work.company} className="w-full h-full object-cover" />
+                                    </div>
+
+                                    {/* Spacer for proper alignment */}
+                                    <div className="w-full md:w-1/2"></div>
+
+                                    {/* Content Card */}
+                                    <div className="w-full md:w-1/2 pl-16 md:pl-0">
+                                        <div className={`relative p-4 rounded-2xl bg-white/10 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 dark:border-gray-700/50 shadow-xl hover:shadow-2xl transition-all duration-300 group hover:-translate-y-1 ${index % 2 === 0 ? 'md:ml-auto md:mr-12' : 'md:ml-12 md:mr-auto'}`}>
+
+                                            <div className="flex flex-col gap-2">
+                                                <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wide text-primary bg-primary/10 rounded-full w-fit">
+                                                    {work.date}
+                                                </span>
+                                                <h4 className="text-xl font-bold text-text-light dark:text-white group-hover:text-primary transition-colors">
+                                                    {work.role}
+                                                </h4>
+                                                <div className="flex items-center gap-2 text-sm font-medium text-text-main dark:text-gray-300">
+                                                    <span>{work.company}</span>
+                                                    <span>•</span>
+                                                    <span>{work.location}</span>
+                                                </div>
+                                                <p className="text-text-muted dark:text-gray-400 mt-2 text-sm leading-relaxed">
+                                                    {work.description}
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
