@@ -3,7 +3,7 @@ import { FaHeart } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className="w-full bg-bg-light dark:bg-bg-dark py-8 text-center text-text-muted dark:text-gray-400 border-t border-gray-200 dark:border-white/5 transition-colors duration-300">
+        <footer className="w-full bg-bg-light dark:bg-bg-dark pt-8 pb-32 md:py-8 text-center text-text-muted dark:text-gray-400 border-t border-gray-200 dark:border-white/5 transition-colors duration-300">
             <div className="flex flex-col items-center justify-center gap-2">
                 <p className="flex items-center gap-2">
                     Made with <FaHeart className="text-red-500 animate-pulse" /> by Pabitra

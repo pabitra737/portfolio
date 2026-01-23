@@ -5,7 +5,7 @@ import aboutImg from '../assets/about-3d.png';
 
 const About = () => {
     return (
-        <div name="about" className="w-full min-h-screen text-text-light dark:text-text-inverted py-20 flex items-center">
+        <div name="about" id="about" className="w-full min-h-screen text-text-light dark:text-text-inverted py-20 flex items-center">
             <div className="max-w-screen-xl mx-auto px-4 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
                 {/* Left Side - 3D Design Photo */}
