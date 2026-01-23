@@ -1,5 +1,7 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "./components/Navbar";
+import MobileNavbar from "./components/MobileNavbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Projects from "./components/Projects";
@@ -10,7 +12,21 @@ import AboutPage from "./pages/AboutPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import FloatingLines from "./components/FloatingLines";
 
+import ContactPage from "./pages/ContactPage";
+
+const PageWrapper = ({ children }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -20 }}
+    transition={{ duration: 0.3 }}
+  >
+    {children}
+  </motion.div>
+);
+
 function App() {
+  const location = useLocation();
   return (
     <div className="min-h-screen relative text-text-main dark:text-text-inverted overflow-x-hidden">
       <div className="fixed inset-0 -z-10 pointer-events-auto">
@@ -30,18 +46,34 @@ function App() {
       </div>
       <div className="relative z-10 w-full">
         <Navbar />
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Hero />
-              <About />
-              <Projects />
-              <Contact />
-            </>
-          } />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-        </Routes>
+        <MobileNavbar />
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={
+              <PageWrapper>
+                <Hero />
+                <About />
+                <Projects />
+                <Contact />
+              </PageWrapper>
+            } />
+            <Route path="/about" element={
+              <PageWrapper>
+                <AboutPage />
+              </PageWrapper>
+            } />
+            <Route path="/projects" element={
+              <PageWrapper>
+                <ProjectsPage />
+              </PageWrapper>
+            } />
+            <Route path="/contact" element={
+              <PageWrapper>
+                <ContactPage />
+              </PageWrapper>
+            } />
+          </Routes>
+        </AnimatePresence>
         <Footer />
         <FloatingSocials />
       </div>

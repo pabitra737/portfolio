@@ -9,6 +9,7 @@ const Hero = () => {
     return (
         <div
             name="home"
+            id="home"
             className="min-h-screen w-full text-text-light dark:text-text-inverted relative overflow-hidden transition-colors duration-300 pt-20"
         >
             {/* Animated Background Elements */}

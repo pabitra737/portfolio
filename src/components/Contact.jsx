@@ -21,7 +21,7 @@ const Contact = () => {
     };
 
     return (
-        <div name="contact" className="w-full min-h-screen text-text-light dark:text-text-inverted p-4 py-20 transition-colors duration-300">
+        <div name="contact" id="contact" className="w-full min-h-screen text-text-light dark:text-text-inverted p-4 py-20 transition-colors duration-300">
             <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full">
                 <div className="pb-8 text-center md:text-left">
                     <p className="text-4xl font-bold inline border-b-4 border-primary dark:text-gray-100">Contact</p>
