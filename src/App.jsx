@@ -7,7 +7,7 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import FloatingSocials from "./components/FloatingSocials";
-import Footer from "./components/Footer";
+
 import AboutPage from "./pages/AboutPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import FloatingLines from "./components/FloatingLines";
@@ -74,7 +74,7 @@ function App() {
             } />
           </Routes>
         </AnimatePresence>
-        <Footer />
+
         <FloatingSocials />
       </div>
     </div>

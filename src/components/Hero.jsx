@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { FaFileDownload } from 'react-icons/fa';
 import { Link } from 'react-scroll';
 import heroProfile from '../assets/hero-profile.jpg';
+import resume from '../assets/Pabitra-Sahoo-Resume.pdf';
 
 const Hero = () => {
     return (
@@ -53,10 +54,10 @@ const Hero = () => {
                     <div className="flex gap-4 items-center">
                         <Link to="contact" smooth duration={500}>
                             <button className="group text-white w-fit px-6 py-3 flex items-center rounded-lg bg-primary hover:bg-primary-dark transition-all duration-300 shadow-md hover:shadow-lg">
-                                Contact Me
+                                Get in Touch
                             </button>
                         </Link>
-                        <a href="/resume.pdf" download={true} className="group text-text-main dark:text-white w-fit px-6 py-3 flex items-center rounded-lg border border-gray-400 dark:border-gray-500 hover:bg-gray-200 dark:hover:bg-white/10 transition-all duration-300">
+                        <a href={resume} download="Pabitra-Sahoo-Resume.pdf" className="group text-text-main dark:text-white w-fit px-6 py-3 flex items-center rounded-lg border border-gray-400 dark:border-gray-500 hover:bg-gray-200 dark:hover:bg-white/10 transition-all duration-300">
                             Resume <FaFileDownload className="ml-2 group-hover:translate-y-1 transition-transform" />
                         </a>
                     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import aboutImg from '../assets/about-3d.png';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const About = () => {
     return (
@@ -14,9 +14,15 @@ const About = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
-                    className="flex justify-center"
+                    className="flex justify-center relative"
                 >
-                    <img src={aboutImg} alt="About Me 3D" className="w-full max-w-md object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500" />
+                    <div className="w-full max-w-md">
+                        <DotLottieReact
+                            src="https://lottie.host/b68b8f03-472c-4239-935b-fbc697ad1215/3layrSMf8P.lottie"
+                            loop
+                            autoplay
+                        />
+                    </div>
                 </motion.div>
 
                 {/* Right Side - About Summary */}
