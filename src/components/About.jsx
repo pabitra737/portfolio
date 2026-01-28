@@ -33,7 +33,7 @@ const About = () => {
                     viewport={{ once: true }}
                     className="flex flex-col gap-6 text-center md:text-left"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold text-text-light dark:text-gray-100">About <span className="text-primary">Me</span></h2>
+                    <h2 className="text-4xl md:text-5xl font-bold text-text-light dark:text-gray-100">About Me</h2>
                     <p className="text-lg text-text-muted dark:text-gray-300 leading-relaxed">
                         I'm a passionate developer who loves creating beautiful and functional web experiences.
                         With a strong foundation in modern web technologies, I turn ideas into reality through clean code and creative design.

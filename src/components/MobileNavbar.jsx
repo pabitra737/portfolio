@@ -36,36 +36,36 @@ const MobileNavbar = () => {
                         // Active state logic for non-home pages
                         const active = isActive(item);
 
-                        if (isHome) {
-                            // On Home page: Use ScrollLink for scroll spy behavior
+                        // Specific logic for Home link when on Home page
+                        if (item.link === 'home' && isHome) {
                             return (
                                 <ScrollLink
                                     key={item.id}
                                     to={item.link}
-                                    spy={true}
+                                    spy={false}
                                     smooth={true}
                                     duration={500}
                                     offset={-50}
-                                    activeClass="!text-primary-light font-bold"
-                                    className="flex flex-col items-center gap-1 cursor-pointer transition-colors text-gray-400 hover:text-primary-light"
+                                    className={`flex flex-col items-center gap-1 cursor-pointer transition-colors ${isHome ? '!text-primary-light font-bold' : 'text-gray-400 hover:text-primary-light'}`}
                                 >
                                     {item.icon}
                                     <span className="text-[10px] font-medium">{item.label}</span>
                                 </ScrollLink>
                             );
-                        } else {
-                            // On other pages: Standard RouterLink
-                            return (
-                                <RouterLink
-                                    key={item.id}
-                                    to={item.path}
-                                    className={`flex flex-col items-center gap-1 cursor-pointer transition-colors ${active ? 'text-primary-light' : 'text-gray-400 hover:text-primary-light'}`}
-                                >
-                                    {item.icon}
-                                    <span className="text-[10px] font-medium">{item.label}</span>
-                                </RouterLink>
-                            );
                         }
+
+                        // For all other cases (About, Projects, Contact, or Home when not on index)
+                        // Use RouterLink to navigate to the specific page
+                        return (
+                            <RouterLink
+                                key={item.id}
+                                to={item.path}
+                                className={`flex flex-col items-center gap-1 cursor-pointer transition-colors ${active ? 'text-primary-light font-bold' : 'text-gray-400 hover:text-primary-light'}`}
+                            >
+                                {item.icon}
+                                <span className="text-[10px] font-medium">{item.label}</span>
+                            </RouterLink>
+                        );
                     })}
                 </div>
             </motion.div>
