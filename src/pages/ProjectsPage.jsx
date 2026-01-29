@@ -14,7 +14,7 @@ const ProjectsPage = () => {
                     className="text-center mb-16"
                 >
                     <h1 className="text-4xl md:text-5xl font-bold mb-6 text-text-light dark:text-white">
-                        My Work in Action
+                        Code to Creation
                     </h1>
                     <p className="text-xl text-text-muted dark:text-gray-300 font-light max-w-2xl mx-auto">
                         <b>A collection of projects showcasing my skills, creativity, and hands-on development experience.</b>

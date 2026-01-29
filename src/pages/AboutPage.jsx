@@ -92,10 +92,10 @@ const AboutPage = () => {
                 {/* Intro Section */}
                 <div className="flex flex-col items-center text-center gap-6">
                     <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-                        Hi, I am Pabitra Sahoo
+                        Hola, soy Pabitra Sahoo
                     </h2>
                     <p className="text-lg md:text-xl text-text-muted dark:text-gray-300 max-w-2xl leading-relaxed">
-                        Welcome to my portfolio! I'm thrilled to have you here. I am a passionate developer dedicated to building impactful web experiences.
+                        You’ve landed in my creative nook. Grab a virtual coffee and take a look around. I'm thrilled to have you.
                     </p>
 
                     <div className="relative group">
@@ -112,15 +112,25 @@ const AboutPage = () => {
                 <div className="flex flex-col gap-12">
                     <div className="space-y-4">
                         <h3 className="text-2xl font-bold text-text-light dark:text-white border-b-2 border-primary w-fit pb-1">About</h3>
-                        <p className="text-text-main dark:text-gray-300 leading-relaxed">
-                            I am an enthusiastic web developer with a keen eye for detail. My journey in technology is driven by curiosity and a desire to solve real-world problems through code. I love exploring new technologies and constantly upgrading my skills to stay relevant in the fast-paced tech world.
+                        <p className="text-lg text-text-main dark:text-gray-300 leading-relaxed">
+                            As a Full Stack Developer, I build complete and scalable applications with clean frontend design and strong backend logic. I focus on writing simple, maintainable code that is fast, secure, and reliable.
+
+                            I enjoy solving problems by understanding user needs and turning complex ideas into easy solutions. I follow best practices, maintain code quality, and keep improving systems over time.
+
+                            I believe in continuous learning and adapting to new technologies to create useful and reliable software.
                         </p>
                     </div>
 
                     <div className="space-y-4">
                         <h3 className="text-2xl font-bold text-text-light dark:text-white border-b-2 border-primary w-fit pb-1">Career</h3>
-                        <p className="text-text-main dark:text-gray-300 leading-relaxed">
-                            As a budding Full Stack Developer, my goal is to architect scalable and efficient web applications. I aspire to work in a dynamic environment where I can contribute to innovative projects while growing as a professional. I am focused on mastering modern frameworks and backend architectures to deliver complete digital solutions.
+                        <p className="text-lg text-text-main dark:text-gray-300 leading-relaxed">
+                            I began my academic journey as a Zoology student, exploring biology and life sciences. Over time, I discovered a strong passion for technology and software development. Transitioning from Zoology to Computer Science was a significant challenge, but it taught me to be adaptable, resilient, and committed to learning.
+                        </p>
+                        <p className="text-lg text-text-main dark:text-gray-300 leading-relaxed">
+                            Recentlty, I completed a Full Stack Development Internship at <strong><a href="https://www.nerp.in/" rel="noopener noreferrer">Nirmalya Labs</a></strong>, where I worked on a large-scale Healthcare ERP system. I used Java and Spring Boot on the backend and helped connect it smoothly with the frontend. In this internship, I learned how to maintain real-world large-scale code, follow best practices, and handle complex projects from start to finish. This experience taught me everything about building, managing, and improving professional software systems.
+                        </p>
+                        <p className="text-lg text-text-main dark:text-gray-300 leading-relaxed">
+                            Through this journey, I have grown as a skilled developer who values learning, problem-solving, and building software that works efficiently and meets user needs.
                         </p>
                     </div>
                 </div>

@@ -47,8 +47,8 @@ const Hero = () => {
                             />
                         </span>
                     </h2>
-                    <p className="text-text-muted dark:text-gray-400 max-w-md text-base md:text-lg leading-relaxed">
-                        I build modern, interactive web applications with a focus on user experience. Let's create something simple, clean, and amazing.
+                    <p className="text-text-muted dark:text-gray-200 max-w-md text-base md:text-xl leading-relaxed">
+                        Great developers aren't flawless, they are fearless. They are break things, and fix them, learn, and grow. That's what makes them great.
                     </p>
 
                     <div className="flex gap-4 items-center">

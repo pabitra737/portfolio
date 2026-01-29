@@ -8,7 +8,7 @@ const Projects = () => {
         <div name="projects" id="projects" className="w-full min-h-screen text-text-light dark:text-text-inverted py-20 relative px-4 transition-colors duration-300">
             <div className="max-w-6xl mx-auto flex flex-col justify-center w-full h-full">
                 <div className="pb-12 text-center">
-                    <h2 className="text-6xl font-bold inline dark:text-gray-100">Some of my Projects</h2>
+                    <h2 className="text-6xl font-bold inline dark:text-gray-100">Some of My Projects</h2>
                     <p className="py-6 text-xl text-text-muted dark:text-gray-200">I've worked on a variety of projects. Here are a few of my favorites. You can find more on my projects page.</p>
                 </div>
 
